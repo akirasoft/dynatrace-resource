@@ -3,6 +3,7 @@
       "monspecserviceenvironment": "SampleJSonService/Staging",
       "pipelinetaskname": "TestStagingDeployment",
       "deployversion": "v1.4",
+      "APP_REPO": "some-repo",
       "VERSION_FILE": "version/number"
     },
     "source": {
