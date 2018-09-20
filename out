@@ -22,8 +22,15 @@ tenanthost="$(jq -r '.source.tenanthost' < "${PAYLOAD}")"
 #values from pipeline
 monspecserviceenvironment="$(jq -r '.params.monspecserviceenvironment' < "${PAYLOAD}")"
 pipelinetaskname="$(jq -r '.params.pipelinetaskname' < "${PAYLOAD}")"
-deployversion="$(jq -r '.params.deployversion' < "${PAYLOAD}")"
+
 APP_REPO="$(jq -r '.params.APP_REPO' < "${PAYLOAD}")"
+
+if [ -n "$VERSION_FILE" ]; then
+export deployversion=$(cat ./$VERSION_FILE)
+else
+deployversion="$(jq -r '.params.deployversion' < "${PAYLOAD}")"
+fi
+
 
 echo "configuring Dynatrace CLI with $apitoken and $tenanthost"
 

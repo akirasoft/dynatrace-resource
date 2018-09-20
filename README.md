@@ -43,7 +43,8 @@ Required:
 - `APP_REPO`: Must match name of resource containing monspec file
 - `monspecserviceenvironment`: Must match toplevel entry in monspec file plus environment name, i.e. "SampleJSonService/Staging"
 - `pipelinetaskname`: Label for the task/job being executed, i.e.: "TestStagingDeployment"
-- `deployversion`: a version number for the release, i.e.: "v1.4"
+- `VERSION_FILE`: points to file used to track version, i.e. when using the semver resource
+- `deployversion`: a version number for the release, i.e.: "v1.4", will not be used if VERSION_FILE is defined
 
 A sample pipeline utilizing this resource can be found in the [PivotalDevOpsPipeline repo.](https://github.com/akirasoft/PivotalDevOpsTutorial)
 
