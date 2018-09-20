@@ -2,7 +2,8 @@
     "params": {
       "monspecserviceenvironment": "SampleJSonService/Staging",
       "pipelinetaskname": "TestStagingDeployment",
-      "deployversion": "v1.4"
+      "deployversion": "v1.4",
+      "VERSION_FILE": "version/number"
     },
     "source": {
       "apitoken": "sampletoken",

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 cd "${1}"
 
@@ -24,11 +24,11 @@ monspecserviceenvironment="$(jq -r '.params.monspecserviceenvironment' < "${PAYL
 pipelinetaskname="$(jq -r '.params.pipelinetaskname' < "${PAYLOAD}")"
 
 APP_REPO="$(jq -r '.params.APP_REPO' < "${PAYLOAD}")"
+deployversion="$(jq -r '.params.deployversion' < "${PAYLOAD}")"
+VERSION_FILE="$(jq -r '.params.VERSION_FILE' < "${PAYLOAD}")"
 
 if [ -n "$VERSION_FILE" ]; then
 export deployversion=$(cat ./$VERSION_FILE)
-else
-deployversion="$(jq -r '.params.deployversion' < "${PAYLOAD}")"
 fi
 
 
