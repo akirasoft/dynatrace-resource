@@ -1,4 +1,4 @@
-Dynatrace UFO resource for Concourse
+Dynatrace Resource for Concourse
 ====================================
 
 Allows pushing deployment event data to Dynatrace
